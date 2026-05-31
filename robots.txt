@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://greatparentinghacks.com/sitemap.xml
