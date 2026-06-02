@@ -176,6 +176,20 @@ body{
 .form-wrap .s-btn:hover{
   background:var(--gold-deep) !important;
 }
+/* Hide Systeme.io branding badge completely */
+.form-wrap .s-btn-powered-by,
+.form-wrap [class*="powered"],
+.form-wrap [class*="systeme"],
+.form-wrap a[href*="systeme"],
+.form-wrap img[src*="systeme"],
+.form-wrap .s-powered-by{
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+  height:0 !important;
+  width:0 !important;
+  overflow:hidden !important;
+}
 
 .privacy{
   font-size:13px;
@@ -271,6 +285,24 @@ body{
     <div class="form-wrap">
       <script id="form-script-tag-24249844" src="https://0b50-hello.systeme.io/public/remote/page/4142734868f9d8973e65ee0ef5863ee664eb6c5b.js"></script>
     </div>
+    <script>
+    // Wait for Systeme.io form to render then customise it
+    function customiseForm(){
+      // Change button text
+      var btns = document.querySelectorAll('.form-wrap button, .form-wrap [type="submit"], .form-wrap .s-btn');
+      btns.forEach(function(btn){
+        if(btn.innerText && btn.innerText.trim() !== ''){
+          btn.innerText = 'Send Me the FREE Guide';
+        }
+      });
+      // Hide powered by badge
+      var badges = document.querySelectorAll('.form-wrap a[href*="systeme"], .form-wrap [class*="powered"], .form-wrap [class*="branding"]');
+      badges.forEach(function(el){ el.style.display = 'none'; });
+    }
+    // Run after 500ms and 1500ms to catch delayed renders
+    setTimeout(customiseForm, 500);
+    setTimeout(customiseForm, 1500);
+    </script>
 
     <p class="privacy">100% free. No spam. Unsubscribe anytime.</p>
   </div>
