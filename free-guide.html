@@ -116,58 +116,66 @@ body{
   font-style:italic;
 }
 
-/* Systeme.io form styles */
-.form-wrap form{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
+/* Systeme.io complete style override */
+/* Hide everything we do not want */
+.form-wrap .s-optin-element > div > div:first-child{display:none !important}
+.form-wrap .s-optin{background:transparent !important;padding:0 !important;border:none !important;box-shadow:none !important}
+.form-wrap .s-optin-element{background:transparent !important;padding:0 !important}
+.form-wrap .s-btn-powered-by{display:none !important}
+.form-wrap [data-element="powered-by"]{display:none !important}
+.form-wrap .s-optin__title{display:none !important}
+.form-wrap .s-optin__subtitle{display:none !important}
+.form-wrap .s-optin__image{display:none !important}
+.form-wrap .s-optin__header{display:none !important}
+.form-wrap .s-optin__benefits{display:none !important}
+.form-wrap p{display:none !important}
+.form-wrap img{display:none !important}
+.form-wrap h1,.form-wrap h2,.form-wrap h3{display:none !important}
+
+/* Style the actual form fields */
 .form-wrap input[type="text"],
 .form-wrap input[type="email"]{
-  font-family:'Newsreader',Georgia,serif;
-  font-size:17px;
-  padding:15px 18px;
-  border:2px solid var(--line);
-  border-radius:7px;
-  background:#fff;
-  width:100%;
-  color:var(--ink);
-  outline:none;
-  transition:border-color .2s;
+  font-family:'Newsreader',Georgia,serif !important;
+  font-size:17px !important;
+  padding:15px 18px !important;
+  border:2px solid var(--line) !important;
+  border-radius:7px !important;
+  background:#fff !important;
+  width:100% !important;
+  color:var(--ink) !important;
+  outline:none !important;
+  margin-bottom:12px !important;
+  box-shadow:none !important;
+  display:block !important;
 }
 .form-wrap input[type="text"]:focus,
 .form-wrap input[type="email"]:focus{
-  border-color:var(--gold);
+  border-color:var(--gold) !important;
 }
-.form-wrap input[type="text"]::placeholder{color:var(--muted)}
-.form-wrap input[type="email"]::placeholder{color:var(--muted)}
 
-/* Add placeholders via attribute */
-.form-wrap input[name="surname"]{order:-1}
-
-.form-wrap .btn,
-.form-wrap button[type="submit"]{
-  background:var(--gold);
-  color:#fff;
-  font-family:'Archivo',sans-serif;
-  font-weight:900;
-  font-size:16px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  border-radius:7px;
-  width:100%;
-  padding:20px 24px;
-  cursor:pointer;
-  border:none;
-  box-shadow:0 8px 24px -8px rgba(203,144,40,.7);
-  transition:background .2s,transform .2s;
+/* Style the submit button */
+.form-wrap button[type="submit"],
+.form-wrap .s-btn{
+  background:var(--gold) !important;
+  color:#fff !important;
+  font-family:'Archivo',sans-serif !important;
+  font-weight:900 !important;
+  font-size:16px !important;
+  letter-spacing:.08em !important;
+  text-transform:uppercase !important;
+  border-radius:7px !important;
+  width:100% !important;
+  padding:20px 24px !important;
+  cursor:pointer !important;
+  border:none !important;
+  box-shadow:0 8px 24px -8px rgba(203,144,40,.7) !important;
+  transition:background .2s !important;
+  margin-top:4px !important;
 }
-.form-wrap .btn:hover,
-.form-wrap button[type="submit"]:hover{
-  background:var(--gold-deep);
-  transform:translateY(-1px);
+.form-wrap button[type="submit"]:hover,
+.form-wrap .s-btn:hover{
+  background:var(--gold-deep) !important;
 }
-.f-row{margin-top:4px}
 
 .privacy{
   font-size:13px;
@@ -261,13 +269,7 @@ body{
     <p class="sub">Enter your details and it arrives in your inbox immediately.</p>
 
     <div class="form-wrap">
-      <form method="post" action="https://systeme.io/embedded/41427348/subscription">
-        <input type="text" name="surname" placeholder="First Name" />
-        <input type="email" name="email" placeholder="Email Address" required />
-        <div class="f-row">
-          <button type="submit" class="btn">Send Me the FREE Guide</button>
-        </div>
-      </form>
+      <script id="form-script-tag-24249844" src="https://0b50-hello.systeme.io/public/remote/page/4142734868f9d8973e65ee0ef5863ee664eb6c5b.js"></script>
     </div>
 
     <p class="privacy">100% free. No spam. Unsubscribe anytime.</p>
